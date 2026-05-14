@@ -1,0 +1,27 @@
+.avatar-picker {
+  display: flex;
+  justify-content: center;
+}
+
+.emoji-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  max-width: 400px;
+}
+
+.avatar-option {
+  padding: 2px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.avatar-option:active {
+  transform: scale(0.92);
+}
+
+.avatar-option-selected {
+  border-color: var(--color-accent);
+}

@@ -1,0 +1,49 @@
+.edit-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+}
+
+.edit-input, .edit-textarea {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-md);
+  color: var(--color-text-primary);
+  transition: box-shadow 0.15s;
+}
+
+.edit-input {
+  height: 48px;
+}
+
+.edit-textarea {
+  resize: none;
+}
+
+.edit-input:focus, .edit-textarea:focus {
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+.edit-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  display: block;
+  margin-bottom: var(--spacing-xs);
+}
+
+.edit-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.edit-actions-left, .edit-actions-right {
+  display: flex;
+  gap: var(--spacing-sm);
+}

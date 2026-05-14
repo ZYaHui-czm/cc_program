@@ -1,0 +1,82 @@
+{
+  "app": {
+    "title": "备忘录",
+    "ideas": "想法",
+    "planning": "规划",
+    "reminders": "提醒"
+  },
+  "common": {
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "confirm": "确认",
+    "back": "返回",
+    "all": "全部",
+    "favorites": "收藏",
+    "add": "添加",
+    "edit": "编辑",
+    "done": "完成"
+  },
+  "ideas": {
+    "title": "想法",
+    "addPlaceholder": "添加一个新想法...",
+    "empty": "还没有想法",
+    "emptyHint": "点击上方添加第一个想法"
+  },
+  "planning": {
+    "title": "规划",
+    "addPlaceholder": "添加一个新规划...",
+    "empty": "还没有规划",
+    "emptyHint": "点击上方添加第一个规划"
+  },
+  "reminders": {
+    "title": "提醒",
+    "addPlaceholder": "添加一个新提醒...",
+    "empty": "还没有提醒",
+    "emptyHint": "点击上方添加第一个提醒",
+    "setReminder": "设置提醒时间",
+    "reminderTime": "提醒时间",
+    "noReminder": "未设置提醒",
+    "overdue": "已过期"
+  },
+  "item": {
+    "addNote": "添加备注...",
+    "editTitle": "编辑标题",
+    "deleteConfirm": "确定要删除这条记录吗？",
+    "noNote": "暂无备注"
+  },
+  "login": {
+    "welcome": "欢迎使用备忘录",
+    "welcomeBack": "欢迎回来",
+    "username": "用户名",
+    "usernamePlaceholder": "请输入用户名",
+    "chooseAvatar": "选择头像",
+    "getStarted": "开始使用",
+    "continue": "继续"
+  },
+  "settings": {
+    "title": "设置",
+    "profile": "个人资料",
+    "theme": "主题",
+    "themeLight": "浅色",
+    "themeDark": "深色",
+    "language": "语言",
+    "languageZh": "中文",
+    "languageEn": "English",
+    "notifications": "通知",
+    "notificationsEnabled": "已开启",
+    "notificationsDisabled": "已关闭",
+    "notificationsDenied": "已拒绝",
+    "enableNotifications": "开启通知",
+    "clearData": "清空所有数据",
+    "clearDataConfirm": "确定要清空所有数据吗？此操作不可撤销。",
+    "about": "关于",
+    "version": "版本"
+  },
+  "profile": {
+    "title": "编辑资料",
+    "username": "用户名",
+    "avatar": "头像",
+    "saveSuccess": "保存成功"
+  }
+}

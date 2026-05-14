@@ -1,0 +1,77 @@
+.settings-page {
+  padding-bottom: var(--spacing-xl);
+}
+
+.settings-section {
+  margin: var(--spacing-md);
+  background: var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md);
+  min-height: 56px;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-md);
+}
+
+.settings-row:last-child {
+  border-bottom: none;
+}
+
+.settings-profile {
+  margin: var(--spacing-md);
+  background: var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  gap: var(--spacing-sm);
+}
+
+.settings-profile-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.settings-profile-name {
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.settings-profile-hint {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+}
+
+.settings-toggle {
+  display: flex;
+  background: var(--color-bg-tertiary);
+  border-radius: 20px;
+  padding: 2px;
+}
+
+.settings-toggle-option {
+  padding: 6px 14px;
+  border-radius: 18px;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  transition: all 0.15s;
+}
+
+.settings-toggle-option.active {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.settings-footer {
+  text-align: center;
+  padding: var(--spacing-xl);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+}

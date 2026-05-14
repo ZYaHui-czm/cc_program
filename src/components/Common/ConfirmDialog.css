@@ -1,0 +1,16 @@
+.confirm-body {
+  padding: var(--spacing-md);
+}
+
+.confirm-body p {
+  text-align: center;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-sm);
+}
+
+.confirm-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: flex-end;
+}

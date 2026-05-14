@@ -1,0 +1,82 @@
+{
+  "app": {
+    "title": "Memo",
+    "ideas": "Ideas",
+    "planning": "Planning",
+    "reminders": "Reminders"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "back": "Back",
+    "all": "All",
+    "favorites": "Favorites",
+    "add": "Add",
+    "edit": "Edit",
+    "done": "Done"
+  },
+  "ideas": {
+    "title": "Ideas",
+    "addPlaceholder": "Add a new idea...",
+    "empty": "No ideas yet",
+    "emptyHint": "Tap above to add your first idea"
+  },
+  "planning": {
+    "title": "Planning",
+    "addPlaceholder": "Add a new plan...",
+    "empty": "No plans yet",
+    "emptyHint": "Tap above to add your first plan"
+  },
+  "reminders": {
+    "title": "Reminders",
+    "addPlaceholder": "Add a new reminder...",
+    "empty": "No reminders yet",
+    "emptyHint": "Tap above to add your first reminder",
+    "setReminder": "Set reminder time",
+    "reminderTime": "Reminder time",
+    "noReminder": "No reminder set",
+    "overdue": "Overdue"
+  },
+  "item": {
+    "addNote": "Add note...",
+    "editTitle": "Edit title",
+    "deleteConfirm": "Are you sure you want to delete this item?",
+    "noNote": "No note"
+  },
+  "login": {
+    "welcome": "Welcome to Memo",
+    "welcomeBack": "Welcome back",
+    "username": "Username",
+    "usernamePlaceholder": "Enter your username",
+    "chooseAvatar": "Choose avatar",
+    "getStarted": "Get Started",
+    "continue": "Continue"
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": "Profile",
+    "theme": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "language": "Language",
+    "languageZh": "中文",
+    "languageEn": "English",
+    "notifications": "Notifications",
+    "notificationsEnabled": "Enabled",
+    "notificationsDisabled": "Disabled",
+    "notificationsDenied": "Denied",
+    "enableNotifications": "Enable Notifications",
+    "clearData": "Clear All Data",
+    "clearDataConfirm": "Are you sure you want to clear all data? This cannot be undone.",
+    "about": "About",
+    "version": "Version"
+  },
+  "profile": {
+    "title": "Edit Profile",
+    "username": "Username",
+    "avatar": "Avatar",
+    "saveSuccess": "Saved successfully"
+  }
+}
