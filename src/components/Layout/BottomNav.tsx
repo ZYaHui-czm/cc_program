@@ -44,6 +44,7 @@ export default function BottomNav() {
         <NavLink
           key={tab.path}
           to={tab.path}
+          replace
           className={({ isActive }) => `nav-tab ${isActive ? 'nav-tab-active' : ''}`}
         >
           {tab.icon}
