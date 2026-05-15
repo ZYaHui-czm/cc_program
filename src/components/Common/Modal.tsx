@@ -23,6 +23,7 @@ export default function Modal({ open, onClose, title, children }: ModalProps) {
 
     if (window.visualViewport) {
       window.visualViewport.addEventListener('resize', onResize);
+      onResize();
     }
 
     return () => {
