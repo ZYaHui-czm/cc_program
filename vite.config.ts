@@ -9,11 +9,14 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'icons/icon-192.png', 'icons/icon-512.png'],
+      injectRegister: 'inline',
+      includeAssets: ['favicon.svg', 'icons/icon-192.png', 'icons/icon-512.png'],
       manifest: {
         name: '随记',
         short_name: '随记',
         description: '个人随记应用',
+        start_url: '/cc_program/',
+        scope: '/cc_program/',
         theme_color: '#2563eb',
         background_color: '#ffffff',
         display: 'standalone',

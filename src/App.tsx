@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { LocaleProvider } from '@/contexts/LocaleContext';
 import { AuthProvider } from '@/contexts/AuthContext';
+import { InstallProvider } from '@/contexts/InstallContext';
 import RequireAuth from '@/components/Layout/RequireAuth';
 import MainLayout from '@/components/Layout/MainLayout';
 import LoginPage from '@/pages/LoginPage';
@@ -16,8 +17,9 @@ export default function App() {
     <BrowserRouter basename="/cc_program">
       <ThemeProvider>
         <LocaleProvider>
-          <AuthProvider>
-            <Routes>
+          <InstallProvider>
+            <AuthProvider>
+              <Routes>
               <Route path="/login" element={<LoginPage />} />
               <Route element={<RequireAuth />}>
                 <Route element={<MainLayout />}>
@@ -31,6 +33,7 @@ export default function App() {
               </Route>
             </Routes>
           </AuthProvider>
+          </InstallProvider>
         </LocaleProvider>
       </ThemeProvider>
     </BrowserRouter>

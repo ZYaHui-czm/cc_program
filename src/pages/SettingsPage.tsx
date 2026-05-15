@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
 import { useTheme } from '@/hooks/useTheme';
 import { useLocale } from '@/hooks/useLocale';
+import { useInstall } from '@/hooks/useInstall';
 import { db } from '@/db';
 import Avatar from '@/components/Profile/Avatar';
 import Button from '@/components/Common/Button';
@@ -15,7 +16,9 @@ export default function SettingsPage() {
   const { user, logout } = useAuth();
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage } = useLocale();
+  const { canInstall, install } = useInstall();
   const [showClearDialog, setShowClearDialog] = useState(false);
+  const [installed, setInstalled] = useState(false);
 
   const handleClearData = async () => {
     await db.items.clear();
@@ -55,6 +58,26 @@ export default function SettingsPage() {
           </button>
         </div>
       </div>
+
+      {canInstall && (
+        <div className="settings-section">
+          <div className="settings-row">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+              <span>安装应用</span>
+              <span style={{ fontSize: 'var(--font-size-sm)', color: 'var(--color-text-tertiary)' }}>添加到手机主屏幕</span>
+            </div>
+            <Button
+              size="sm"
+              onClick={async () => {
+                const ok = await install();
+                if (ok) setInstalled(true);
+              }}
+            >
+              {installed ? '已安装 ✓' : '安装'}
+            </Button>
+          </div>
+        </div>
+      )}
 
       <div className="settings-section">
         <div className="settings-row">
