@@ -21,19 +21,19 @@
     "title": "Ideas",
     "addPlaceholder": "Add a new idea...",
     "empty": "No ideas yet",
-    "emptyHint": "Tap above to add your first idea"
+    "emptyHint": "Tap the + button to add your first idea"
   },
   "planning": {
     "title": "Planning",
     "addPlaceholder": "Add a new plan...",
     "empty": "No plans yet",
-    "emptyHint": "Tap above to add your first plan"
+    "emptyHint": "Tap the + button to add your first plan"
   },
   "reminders": {
     "title": "Reminders",
     "addPlaceholder": "Add a new reminder...",
     "empty": "No reminders yet",
-    "emptyHint": "Tap above to add your first reminder",
+    "emptyHint": "Tap the + button to add your first reminder",
     "setReminder": "Set reminder time",
     "reminderTime": "Reminder time",
     "noReminder": "No reminder set",
@@ -46,7 +46,7 @@
     "noNote": "No note"
   },
   "login": {
-    "welcome": "Welcome to Memo",
+    "welcome": "Welcome to QuickMemo",
     "welcomeBack": "Welcome back",
     "username": "Username",
     "usernamePlaceholder": "Enter your username",

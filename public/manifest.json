@@ -1,7 +1,7 @@
 {
-  "name": "备忘录",
-  "short_name": "备忘录",
-  "description": "个人备忘录应用",
+  "name": "随记",
+  "short_name": "随记",
+  "description": "个人随记应用",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

@@ -7,9 +7,9 @@ import { useLocale } from '@/hooks/useLocale';
 interface AuthContextType {
   user: User | null;
   isLoading: boolean;
-  login: (username: string, avatar: string, avatarColor: string) => Promise<void>;
+  login: (username: string, photo: string) => Promise<void>;
   logout: () => void;
-  updateProfile: (data: Partial<Pick<User, 'username' | 'avatar' | 'avatarColor' | 'language'>>) => Promise<void>;
+  updateProfile: (data: Partial<Pick<User, 'username' | 'photo' | 'language'>>) => Promise<void>;
 }
 
 export const AuthContext = createContext<AuthContextType>({
@@ -37,11 +37,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
-  const login = useCallback(async (username: string, avatar: string, avatarColor: string) => {
+  const login = useCallback(async (username: string, photo: string) => {
     const id = await db.users.add({
       username,
-      avatar,
-      avatarColor,
+      photo,
       language,
       createdAt: new Date(),
     });
@@ -57,7 +56,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     navigate('/login', { replace: true });
   }, [navigate]);
 
-  const updateProfile = useCallback(async (data: Partial<Pick<User, 'username' | 'avatar' | 'avatarColor' | 'language'>>) => {
+  const updateProfile = useCallback(async (data: Partial<Pick<User, 'username' | 'photo' | 'language'>>) => {
     if (!user?.id) return;
     await db.users.update(user.id, data);
     setUser(prev => prev ? { ...prev, ...data } : null);

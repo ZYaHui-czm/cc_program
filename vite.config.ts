@@ -10,9 +10,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'icons/icon-192.png', 'icons/icon-512.png'],
       manifest: {
-        name: '备忘录',
-        short_name: '备忘录',
-        description: '个人备忘录应用',
+        name: '随记',
+        short_name: '随记',
+        description: '个人随记应用',
         theme_color: '#2563eb',
         background_color: '#ffffff',
         display: 'standalone',

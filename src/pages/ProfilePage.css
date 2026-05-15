@@ -11,6 +11,11 @@
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-md);
+  cursor: pointer;
+}
+
+.profile-avatar-section:active {
+  opacity: 0.8;
 }
 
 .profile-label {

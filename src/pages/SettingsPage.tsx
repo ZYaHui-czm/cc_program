@@ -27,7 +27,7 @@ export default function SettingsPage() {
     <div className="settings-page">
       {user && (
         <Link to="/profile" className="settings-row settings-profile">
-          <Avatar emoji={user.avatar} color={user.avatarColor} size={40} />
+          <Avatar photo={user.photo} size={40} />
           <div className="settings-profile-info">
             <span className="settings-profile-name">{user.username}</span>
             <span className="settings-profile-hint">{t('settings.profile')}</span>
@@ -66,7 +66,7 @@ export default function SettingsPage() {
       </div>
 
       <div className="settings-footer">
-        <p>备忘录 v1.0.0</p>
+        <p>随记 v1.0.0</p>
       </div>
 
       <ConfirmDialog

@@ -2,21 +2,22 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useItems } from '@/hooks/useItems';
 import type { MemoItem } from '@/types';
-import AddItemForm from '@/components/Items/AddItemForm';
 import FavoriteFilter from '@/components/Items/FavoriteFilter';
 import ItemList from '@/components/Items/ItemList';
 import EmptyState from '@/components/Items/EmptyState';
 import EditItemModal from '@/components/Items/EditItemModal';
+import AddItemModal from '@/components/Items/AddItemModal';
+import FAB from '@/components/Common/FAB';
 
 export default function RemindersPage() {
   const { t } = useTranslation();
   const [showFavorites, setShowFavorites] = useState(false);
   const [editingItem, setEditingItem] = useState<MemoItem | null>(null);
+  const [showAdd, setShowAdd] = useState(false);
   const items = useItems('reminders', showFavorites);
 
   return (
-    <>
-      <AddItemForm category="reminders" placeholderKey="reminders.addPlaceholder" />
+    <div className="tab-page">
       <FavoriteFilter showFavorites={showFavorites} onChange={setShowFavorites} />
       {items && items.length > 0 ? (
         <ItemList items={items} onEdit={setEditingItem} />
@@ -29,6 +30,12 @@ export default function RemindersPage() {
         onClose={() => setEditingItem(null)}
         showReminder
       />
-    </>
+      <AddItemModal
+        category="reminders"
+        open={showAdd}
+        onClose={() => setShowAdd(false)}
+      />
+      <FAB onClick={() => setShowAdd(true)} aria-label={t('reminders.addPlaceholder')} />
+    </div>
   );
 }

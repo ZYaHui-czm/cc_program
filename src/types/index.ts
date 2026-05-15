@@ -5,8 +5,7 @@ export type Language = 'zh' | 'en';
 export interface User {
   id?: number;
   username: string;
-  avatar: string;
-  avatarColor: string;
+  photo: string;
   language: Language;
   createdAt?: Date;
 }

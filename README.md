@@ -1,4 +1,4 @@
-# 备忘录 (Memo App)
+# 随记 (QuickMemo)
 
 一款类似 Microsoft To Do 的移动端备忘录 PWA 应用，支持**离线运行**、深色/浅色主题、中英文切换。
 
