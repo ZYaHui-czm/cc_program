@@ -9,6 +9,7 @@
   animation: fadeIn 0.2s;
   padding: var(--spacing-md);
   padding-bottom: max(var(--spacing-md), env(safe-area-inset-bottom));
+  touch-action: none;
 }
 
 .modal-content {
