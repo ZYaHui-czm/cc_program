@@ -8,6 +8,15 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="随记" />
     <meta name="theme-color" content="#2563eb" />
+    <script>
+      (function(){
+        var t=localStorage.getItem('memo-theme');
+        var m=document.querySelector('meta[name="theme-color"]');
+        if(m)m.setAttribute('content',t==='dark'?'#0f172a':'#2563eb');
+        var a=document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+        if(a)a.setAttribute('content',t==='dark'?'black-translucent':'default');
+      })();
+    </script>
     <title>随记</title>
   </head>
   <body>

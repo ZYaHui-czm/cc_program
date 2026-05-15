@@ -37,12 +37,15 @@ export default function Modal({ open, onClose, title, children }: ModalProps) {
   if (!open) return null;
 
   return (
-    <div
-      className="modal-overlay"
-      style={{ paddingBottom: keyboardOffset > 0 ? keyboardOffset : undefined }}
-      onClick={onClose}
-    >
-      <div className="modal-content" onClick={e => e.stopPropagation()}>
+    <div className="modal-overlay" onClick={onClose}>
+      <div
+        className="modal-content"
+        onClick={e => e.stopPropagation()}
+        style={{
+          transform: keyboardOffset > 0 ? `translateY(-${keyboardOffset}px)` : undefined,
+          transition: keyboardOffset > 0 ? 'transform 0.15s ease-out' : undefined,
+        }}
+      >
         {title && <div className="modal-header">{title}</div>}
         {children}
       </div>
