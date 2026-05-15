@@ -4,7 +4,7 @@ import { db } from '@/db';
 import type { Category } from '@/types';
 
 export function useItemActions() {
-  const addItem = useCallback(async (category: Category, title: string, note = '') => {
+  const addItem = useCallback(async (category: Category, title: string, note = '', reminderAt: Date | null = null) => {
     const count = await db.items.where('category').equals(category).count();
     await db.items.add({
       uuid: uuidv4(),
@@ -15,7 +15,7 @@ export function useItemActions() {
       isCompleted: false,
       createdAt: new Date(),
       updatedAt: new Date(),
-      reminderAt: null,
+      reminderAt,
       notifiedAt: null,
       sortOrder: count,
     });
