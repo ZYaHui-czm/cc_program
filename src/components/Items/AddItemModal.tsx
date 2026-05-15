@@ -27,7 +27,12 @@ export default function AddItemModal({ category, open, onClose }: AddItemModalPr
   const handleSubmit = async () => {
     const trimmed = title.trim();
     if (!trimmed) return;
-    await addItem(category, trimmed, note.trim());
+    await addItem(
+      category,
+      trimmed,
+      note.trim(),
+      reminderAt ? new Date(reminderAt) : null,
+    );
     setTitle('');
     setNote('');
     setReminderAt('');
