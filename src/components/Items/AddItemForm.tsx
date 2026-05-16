@@ -7,9 +7,10 @@ import './AddItemForm.css';
 interface AddItemFormProps {
   category: Category;
   placeholderKey: string;
+  onAdded?: (id: number) => void;
 }
 
-export default function AddItemForm({ category, placeholderKey }: AddItemFormProps) {
+export default function AddItemForm({ category, placeholderKey, onAdded }: AddItemFormProps) {
   const { t } = useTranslation();
   const { addItem } = useItemActions();
   const [value, setValue] = useState('');
@@ -17,8 +18,9 @@ export default function AddItemForm({ category, placeholderKey }: AddItemFormPro
   const handleSubmit = async () => {
     const trimmed = value.trim();
     if (!trimmed) return;
-    await addItem(category, trimmed);
+    const id = await addItem(category, trimmed);
     setValue('');
+    onAdded?.(id);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {

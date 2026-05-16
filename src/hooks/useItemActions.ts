@@ -6,7 +6,7 @@ import type { Category } from '@/types';
 export function useItemActions() {
   const addItem = useCallback(async (category: Category, title: string, note = '', reminderAt: Date | null = null) => {
     const count = await db.items.where('category').equals(category).count();
-    await db.items.add({
+    const id = await db.items.add({
       uuid: uuidv4(),
       category,
       title,
@@ -19,6 +19,7 @@ export function useItemActions() {
       notifiedAt: null,
       sortOrder: count,
     });
+    return id;
   }, []);
 
   const updateItem = useCallback(async (id: number, data: Partial<{

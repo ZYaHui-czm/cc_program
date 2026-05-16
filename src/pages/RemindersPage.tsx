@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useItems } from '@/hooks/useItems';
+import { db } from '@/db';
 import type { MemoItem } from '@/types';
 import AddItemForm from '@/components/Items/AddItemForm';
 import FavoriteFilter from '@/components/Items/FavoriteFilter';
@@ -23,13 +24,18 @@ export default function RemindersPage() {
     }
   }, []);
 
+  const handleAdded = useCallback(async (id: number) => {
+    const item = await db.items.get(id);
+    if (item) setEditingItem(item);
+  }, []);
+
   const needPermission = isNotificationSupported()
     && Notification.permission === 'default'
     && !permissionRequested;
 
   return (
     <div className="tab-page">
-      <AddItemForm category="reminders" placeholderKey="reminders.addPlaceholder" />
+      <AddItemForm category="reminders" placeholderKey="reminders.addPlaceholder" onAdded={handleAdded} />
       {needPermission && (
         <div className="notification-banner">
           <span>开启通知以接收提醒</span>
