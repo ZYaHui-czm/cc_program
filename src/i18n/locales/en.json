@@ -21,19 +21,19 @@
     "title": "Ideas",
     "addPlaceholder": "Add a new idea...",
     "empty": "No ideas yet",
-    "emptyHint": "Tap the + button to add your first idea"
+    "emptyHint": "Type in the field above to add your first idea"
   },
   "planning": {
     "title": "Planning",
     "addPlaceholder": "Add a new plan...",
     "empty": "No plans yet",
-    "emptyHint": "Tap the + button to add your first plan"
+    "emptyHint": "Type in the field above to add your first plan"
   },
   "reminders": {
     "title": "Reminders",
     "addPlaceholder": "Add a new reminder...",
     "empty": "No reminders yet",
-    "emptyHint": "Tap the + button to add your first reminder",
+    "emptyHint": "Type in the field above to add your first reminder",
     "setReminder": "Set reminder time",
     "reminderTime": "Reminder time",
     "noReminder": "No reminder set",

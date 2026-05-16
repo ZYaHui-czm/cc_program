@@ -1,23 +1,43 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useItems } from '@/hooks/useItems';
 import type { MemoItem } from '@/types';
+import AddItemForm from '@/components/Items/AddItemForm';
 import FavoriteFilter from '@/components/Items/FavoriteFilter';
 import ItemList from '@/components/Items/ItemList';
 import EmptyState from '@/components/Items/EmptyState';
 import EditItemModal from '@/components/Items/EditItemModal';
-import AddItemModal from '@/components/Items/AddItemModal';
-import FAB from '@/components/Common/FAB';
+import { requestNotificationPermission, isNotificationSupported } from '@/services/notificationService';
 
 export default function RemindersPage() {
   const { t } = useTranslation();
   const [showFavorites, setShowFavorites] = useState(false);
   const [editingItem, setEditingItem] = useState<MemoItem | null>(null);
-  const [showAdd, setShowAdd] = useState(false);
+  const [permissionRequested, setPermissionRequested] = useState(false);
   const items = useItems('reminders', showFavorites);
+
+  const handleEnableNotifications = useCallback(async () => {
+    if (isNotificationSupported()) {
+      await requestNotificationPermission();
+      setPermissionRequested(true);
+    }
+  }, []);
+
+  const needPermission = isNotificationSupported()
+    && Notification.permission === 'default'
+    && !permissionRequested;
 
   return (
     <div className="tab-page">
+      <AddItemForm category="reminders" placeholderKey="reminders.addPlaceholder" />
+      {needPermission && (
+        <div className="notification-banner">
+          <span>开启通知以接收提醒</span>
+          <button className="notification-banner-btn" onClick={handleEnableNotifications}>
+            {t('settings.enableNotifications')}
+          </button>
+        </div>
+      )}
       <FavoriteFilter showFavorites={showFavorites} onChange={setShowFavorites} />
       {items && items.length > 0 ? (
         <ItemList items={items} onEdit={setEditingItem} />
@@ -30,12 +50,6 @@ export default function RemindersPage() {
         onClose={() => setEditingItem(null)}
         showReminder
       />
-      <AddItemModal
-        category="reminders"
-        open={showAdd}
-        onClose={() => setShowAdd(false)}
-      />
-      <FAB onClick={() => setShowAdd(true)} aria-label={t('reminders.addPlaceholder')} />
     </div>
   );
 }

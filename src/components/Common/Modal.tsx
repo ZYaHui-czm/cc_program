@@ -16,8 +16,9 @@ export default function Modal({ open, onClose, title, children }: ModalProps) {
 
     const onResize = () => {
       if (window.visualViewport) {
-        const offset = window.innerHeight - window.visualViewport.height;
-        setKeyboardOffset(offset > 0 ? offset : 0);
+        const byTop = window.visualViewport.offsetTop || 0;
+        const byHeight = window.innerHeight - window.visualViewport.height;
+        setKeyboardOffset(Math.max(byTop, byHeight, 0));
       }
     };
 

@@ -21,19 +21,19 @@
     "title": "想法",
     "addPlaceholder": "添加一个新想法...",
     "empty": "还没有想法",
-    "emptyHint": "点击右下角+号添加第一个想法"
+    "emptyHint": "在上方输入框添加第一个想法"
   },
   "planning": {
     "title": "规划",
     "addPlaceholder": "添加一个新规划...",
     "empty": "还没有规划",
-    "emptyHint": "点击右下角+号添加第一个规划"
+    "emptyHint": "在上方输入框添加第一个规划"
   },
   "reminders": {
     "title": "提醒",
     "addPlaceholder": "添加一个新提醒...",
     "empty": "还没有提醒",
-    "emptyHint": "点击右下角+号添加第一个提醒",
+    "emptyHint": "在上方输入框添加第一个提醒",
     "setReminder": "设置提醒时间",
     "reminderTime": "提醒时间",
     "noReminder": "未设置提醒",
